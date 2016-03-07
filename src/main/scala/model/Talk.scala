@@ -1,10 +1,7 @@
 package model
 
-
-
 import java.util.Calendar
 import java.text.SimpleDateFormat
-import java.lang.Comparable
 
 class Talk(val start: Calendar, val time: Int, val title: String) extends Ordered[Talk] {
   private val df = new SimpleDateFormat("hh:mma")
@@ -16,7 +13,7 @@ class Talk(val start: Calendar, val time: Int, val title: String) extends Ordere
   }
 
   override def toString = {
-    df.format(start.getTime) + "--" + df.format(this.end.getTime) + " " + title
+    df.format(start.getTime) +  " " + title
   }
 
   def compare(that: Talk) = {
